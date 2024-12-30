@@ -1,0 +1,9 @@
+diff --git a/src/cli/cli-options.evaluate.js b/src/cli/cli-options.evaluate.js
+index 36475f936..c6ffe24ae 100644
+--- a/src/cli/cli-options.evaluate.js
++++ b/src/cli/cli-options.evaluate.js
+@@ -197,3 +197,3 @@ const options = {
+     category: optionCategories.CATEGORY_CONFIG,
+-    default: [{ value: [".gitignore", ".prettierignore"] }],
++    default: [{ value: [".gitignore", ".prettierignore", ".config/prettierignore"] }],
+     description: outdent`

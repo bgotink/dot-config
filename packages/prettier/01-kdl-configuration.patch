@@ -1,0 +1,65 @@
+diff --git a/src/config/prettier-config/config-searcher.js b/src/config/prettier-config/config-searcher.js
+index b1c607a2d..d500561bf 100644
+--- a/src/config/prettier-config/config-searcher.js
++++ b/src/config/prettier-config/config-searcher.js
+@@ -6,2 +6,4 @@ import {
+ const CONFIG_FILE_NAMES = [
++  ".prettierrc.kdl",
++  ".config/prettier.kdl",
+   "package.json",
+diff --git a/src/config/prettier-config/kdl.js b/src/config/prettier-config/kdl.js
+new file mode 100644
+index 000000000..e2ba6b03f
+--- /dev/null
++++ b/src/config/prettier-config/kdl.js
+@@ -0,0 +1,31 @@
++import { parse } from "@bgotink/kdl/dessert";
++
++export function parseKdl(text) {
++  return parse(text, ctx => {
++    const plugins = ctx.children("plugin", ctx => ctx.argument.if("string") ?? ctx.json("object"));
++
++    const overrides = ctx.children("override", ctx => {
++      const files = [];
++      const excludedFiles = [];
++      for (const file of [ctx.argument.required("string"), ...ctx.argument.rest("string")]) {
++        if (file.startsWith("!")) {
++          excludedFiles.push(file.slice(1));
++        } else {
++          files.push(file);
++        }
++      }
++
++      return {
++        files,
++        excludedFiles,
++        options: ctx.json(),
++      };
++    });
++
++    return {
++      ...ctx.json("object"),
++      plugins,
++      overrides,
++    };
++  });
++}
+diff --git a/src/config/prettier-config/loaders.js b/src/config/prettier-config/loaders.js
+index bf6d1c4e5..64e8fd44d 100644
+--- a/src/config/prettier-config/loaders.js
++++ b/src/config/prettier-config/loaders.js
+@@ -1,1 +1,2 @@
++import { parseKdl } from "./kdl.js";
+ import { pathToFileURL } from "node:url";
+@@ -67,2 +68,11 @@ const loaders = {
+   ".yml": loadYaml,
++  async ".kdl"(file) {
++    const content = await readFile(file);
++    try {
++      return parseKdl(content);
++    } catch (/** @type {any} */ error) {
++      error.message = `KDL Error in ${file}:\n${error.message}`;
++      throw error;
++    }
++  },
+   // No extension

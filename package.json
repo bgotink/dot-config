@@ -1,0 +1,20 @@
+{
+	"name": "dotconfig",
+	"version": "0.1.0",
+	"packageManager": "yarn@4.5.3",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"postinstall": "is-ci || husky install"
+	},
+	"dependencies": {
+		"@bgotink/kdl": "file:/Users/bram/Workspace/kdl/out"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.2",
+		"express-check-in": "^0.2.0",
+		"husky": "^9.1.7",
+		"is-ci": "^4.1.0",
+		"prettier": "^3.4.2"
+	}
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+dist_folder=dist
+
+function fetch_version {
+	fetch "https://github.com/prettier/prettier/archive/refs/tags/$1.tar.gz"
+}
+
+function fetch_main {
+	fetch "https://github.com/prettier/prettier/archive/refs/heads/main.tar.gz"
+}
+
+function fetch {
+	curl -SsL "$1" | tar xz --strip-components 1
+}
