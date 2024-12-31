@@ -5,10 +5,10 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@bgotink/kdl@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@bgotink/kdl@npm:0.2.1"
-  checksum: 10c0/9d1f1b45ef1c3ddc08322a2b2a61c0831510bb878822f0f91e5ba3c840074c686f0aec6b340baaa5e0e0605bbd30539d7cbdeb504d92f21d632efc2173a7640b
+"@bgotink/kdl@npm:0.3.0-next.0":
+  version: 0.3.0-next.0
+  resolution: "@bgotink/kdl@npm:0.3.0-next.0"
+  checksum: 10c0/a285ac004be248ac5efb58c5fba12a65e35a4deff2189c986ab1a0625b5f666f23f317a697e6dfc8cf5c779154558965c23432c9b7c9798dcea0e18a98e3ca10
   languageName: node
   linkType: hard
 
@@ -41,7 +41,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dotconfig@workspace:."
   dependencies:
-    "@bgotink/kdl": "npm:^0.2.1"
+    "@bgotink/kdl": "npm:0.3.0-next.0"
     "@types/node": "npm:^22.10.2"
     express-check-in: "npm:^0.2.0"
     husky: "npm:^9.1.7"
