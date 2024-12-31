@@ -5,10 +5,10 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@bgotink/kdl@file:/Users/bram/Workspace/kdl/out::locator=dotconfig%40workspace%3A.":
-  version: 0.2.1
-  resolution: "@bgotink/kdl@file:/Users/bram/Workspace/kdl/out#/Users/bram/Workspace/kdl/out::hash=53d464&locator=dotconfig%40workspace%3A."
-  checksum: 10c0/c2f96bbd839b23f69a72cc6837cb92456f00e98984054dd2fb6d0980b0e6ceb1e45d8e506b36d55bf6cdceee54127ae82a4e6f943fa8ab995144056f4e9cd099
+"@bgotink/kdl@npm:0.3.0-next.0":
+  version: 0.3.0-next.0
+  resolution: "@bgotink/kdl@npm:0.3.0-next.0"
+  checksum: 10c0/a285ac004be248ac5efb58c5fba12a65e35a4deff2189c986ab1a0625b5f666f23f317a697e6dfc8cf5c779154558965c23432c9b7c9798dcea0e18a98e3ca10
   languageName: node
   linkType: hard
 
@@ -41,7 +41,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dotconfig@workspace:."
   dependencies:
-    "@bgotink/kdl": "file:/Users/bram/Workspace/kdl/out"
+    "@bgotink/kdl": "npm:0.3.0-next.0"
     "@types/node": "npm:^22.10.2"
     express-check-in: "npm:^0.2.0"
     husky: "npm:^9.1.7"

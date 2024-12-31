@@ -8,7 +8,7 @@
 		"postinstall": "is-ci || husky install"
 	},
 	"dependencies": {
-		"@bgotink/kdl": "file:/Users/bram/Workspace/kdl/out"
+		"@bgotink/kdl": "0.3.0-next.0"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.2",
