@@ -11,5 +11,5 @@ function fetch_main {
 }
 
 function fetch {
-	curl -SsL "$1" | tar xz --strip-components 1
+	curl -fSsL "$1" | tar xz --strip-components 1
 }
