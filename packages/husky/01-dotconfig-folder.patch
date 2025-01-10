@@ -1,0 +1,9 @@
+diff --git a/index.js b/index.js
+index bebf0d5..1a9d71c 100644
+--- a/index.js
++++ b/index.js
+@@ -7,3 +7,3 @@ import p from 'path'
+ 
+-export default (d = '.husky') => {
++export default (d = '.config/husky') => {
+ 	if (process.env.HUSKY === '0') return 'HUSKY=0 skip install'
